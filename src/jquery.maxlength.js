@@ -6,7 +6,7 @@
  * @license		GNU/GPL, see LICENSE.txt
  */
 
-(function($) 
+(function($)
 {
 
 	$.fn.maxlength = function(options)
@@ -23,21 +23,21 @@
 			alertText:			    "You have typed too many characters.", // Text in the alert message
 			slider:				      false // Use counter slider
 		}, options );
-		
+
 		// Add the default event
 		$.merge(settings.events, ['keyup']);
 
-		return this.each(function() 
+		return this.each(function()
 		{
 			var item = $(this);
 			var charactersLength = $(this).val().length;
-			
+
       // Update the status text
 			function updateStatus()
 			{
 				var charactersLeft = settings.maxCharacters - charactersLength;
-				
-				if(charactersLeft < 0) 
+
+				if(charactersLeft < 0)
 				{
 					charactersLeft = 0;
 				}
@@ -45,12 +45,12 @@
 				item.next("div").html(charactersLeft + " " + settings.statusText);
 			}
 
-			function checkChars() 
+			function checkChars()
 			{
 				var valid = true;
-				
+
 				// Too many chars?
-				if(charactersLength >= settings.maxCharacters) 
+				if(charactersLength >= settings.maxCharacters)
 				{
 					// Too may chars, set the valid boolean to false
 					valid = false;
@@ -60,11 +60,11 @@
 					item.val(item.val().substr(0,settings.maxCharacters));
 					// Show the alert dialog box, if its set to true
 					showAlert();
-				} 
-				else 
+				}
+				else
 				{
 					// Remove the notification class
-					if(item.hasClass(settings.notificationClass)) 
+					if(item.hasClass(settings.notificationClass))
 					{
 						item.removeClass(settings.notificationClass);
 					}
@@ -75,9 +75,9 @@
 					updateStatus();
 				}
 			}
-						
+
 			// Shows an alert msg
-			function showAlert() 
+			function showAlert()
 			{
 				if(settings.showAlert)
 				{
@@ -86,10 +86,10 @@
 			}
 
 			// Check if the element is valid.
-			function validateElement() 
+			function validateElement()
 			{
 				var ret = false;
-				
+
 				if(item.is('textarea')) {
 					ret = true;
 				} else if(item.filter("input[type=text]")) {
@@ -102,11 +102,11 @@
 			}
 
 			// Validate
-			if(!validateElement()) 
+			if(!validateElement())
 			{
 				return false;
 			}
-			
+
 			// Loop through the events and bind them to the element
 			$.each(settings.events, function (i, n) {
 				item.bind(n, function(e) {
@@ -116,17 +116,17 @@
 			});
 
 			// Insert the status div
-			if(settings.status) 
+			if(settings.status)
 			{
 				item.after($("<div/>").addClass(settings.statusClass).html('-'));
 				updateStatus();
 			}
 
 			// Remove the status div
-			if(!settings.status) 
+			if(!settings.status)
 			{
 				var removeThisDiv = item.next("div."+settings.statusClass);
-				
+
 				if(removeThisDiv) {
 					removeThisDiv.remove();
 				}
@@ -136,14 +136,14 @@
 			// Slide counter
 			if(settings.slider) {
 				item.next().hide();
-				
+
 				item.focus(function(){
 					item.next().slideDown('fast');
 				});
 
 				item.blur(function(){
 					item.next().slideUp('fast');
-				}); 
+				});
 			}
 
 		});

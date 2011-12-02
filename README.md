@@ -12,7 +12,7 @@ Its **simple** to use.
 Requirements
 ------------
 
- * jQuery 1.4+
+ * jQuery 1.2.6+
  * A modern desktop web browser *or* Internet Explorer 7+
 
 Demo and documentation
@@ -28,4 +28,4 @@ Author and license
 [Maxlength](http://github.com/bratanon/maxlength),
 Copyright 2011, [Emil Stjerneman](http://www.stjerneman.com)
 
-Dual licensed under the MIT or GPL Version 2 licenses.
+Licensed under GPL Version 2 licenses.
