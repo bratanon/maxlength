@@ -1,16 +1,13 @@
 /**
  * jQuery Maxlength plugin
- * @version		$Id: jquery.maxlength.js 18 2009-05-16 15:37:08Z emil@anon-design.se $
- * @package		jQuery maxlength 1.0.5
- * @copyright	Copyright (C) 2009 Emil Stjerneman / http://www.anon-design.se
- * @license		GNU/GPL, see LICENSE.txt
+ * @package	jQuery maxlength 1.0.5
+ * @creatir	Emil Stjerneman / http://www.stjerneman.com
  */
 
 (function ($) {
 
     $.fn.maxlength = function (options) {
-        var settings = jQuery.extend(
-		{
+        var settings = jQuery.extend({
 		    events: [], // Array of events to be triggerd
 		    maxCharacters: 10, // Characters limit
 		    status: true, // True to show status indicator bewlow the element
