@@ -22,10 +22,8 @@ Try the [demonstration](http://www.stjerneman.com/demo/maxlength-with-jquery)
 and browse the
 [documentation](http://www.stjerneman.com/demo/maxlength-with-jquery).
 
-Author and license
+Author
 ------------------
 
 [Maxlength](http://github.com/bratanon/maxlength),
-Copyright 2011, [Emil Stjerneman](http://www.stjerneman.com)
-
-Licensed under GPL Version 2 licenses.
+[Emil Stjerneman](http://www.stjerneman.com)
